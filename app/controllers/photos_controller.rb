@@ -7,8 +7,8 @@ class PhotosController < ApplicationController
   end
 
   def create_row
-    url = params[:da_source]
-    cap = params[:da_caption]
+    url = params[:the_source]
+    cap = params[:the_caption]
     new_photo = Photo.new
     new_photo.source = url
     new_photo.caption = cap
@@ -31,8 +31,6 @@ class PhotosController < ApplicationController
   def edit_form
     id = params[:id]
     @my_photo = Photo.find(id)
-
-
 
 
     render("photos/edit_form.html.erb")
